@@ -1,0 +1,26 @@
+package assignment4_3.employeeinfo;
+
+public class SavingsAccount extends Account {
+
+	private static double interestRate = 0.25 / 100;
+
+	Employee employee;
+
+	public SavingsAccount(Employee emp, double startBalance) {
+		super(emp, startBalance);
+		// TODO Auto-generated constructor stub
+	}
+
+	public AccountType getAcctType() {
+		return AccountType.SAVING;
+	}
+
+
+	public double getBalance() {
+
+		double baseBalance = super.getBalance();
+		double interest = interestRate * baseBalance;
+		return baseBalance + interest;
+	}
+
+}

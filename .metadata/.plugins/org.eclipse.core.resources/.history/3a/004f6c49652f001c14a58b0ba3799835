@@ -1,0 +1,31 @@
+package cloning_1.shallow;
+
+public class CallingClass {
+
+	public MyClass tryToClone(MyClass cl) {
+
+		try {
+			return (MyClass) cl.clone();
+		} catch (CloneNotSupportedException e) {
+			return null;
+		}
+	}
+
+	public static void main(String[] args) {
+		CallingClass cc = new CallingClass();
+		MyClass cl = new MyClass();
+		
+		//clone created here
+		MyClass result = cc.tryToClone(cl);
+
+		System.out.println(result.getName());
+		System.out.println(cl.getName());
+
+		result.setName("Dagi");
+
+		System.out.println(cl.getName());
+		System.out.println(result.getName());
+
+	}
+
+}

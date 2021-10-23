@@ -1,0 +1,41 @@
+package assignment2_1;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		Address billAdd1A = new Address("10 Adams", "Fairfield", "IA", "52556");
+		Address shipAdd1B = new Address("110 Burlington", "Fairfield", "IA", "52556");
+		Address billAdd2A = new Address("9501 Kings Drive", "Chicago", "IL", "60628");
+		Address shipAdd2B = new Address("2210 Burlington", "Fairfield", "IA", "52556");
+
+		Customer client1 = new Customer("Yohannes", "Woldemichael", "sn-1234567", billAdd1A, shipAdd1B);
+
+		// client1.setBillingAddress(billAdd1A);
+		// client1.setShippingAddress(shipAdd1B);
+
+		Customer client2 = new Customer("Daniel", "Gilbertsadik", "sn-1234568", billAdd2A, shipAdd2B);
+//		client2.setBillingAddress(billAdd2A);
+//		client2.setShippingAddress(shipAdd2B);
+		// TODO Auto-generated method stub
+
+		// Creates a Customer array of length 2
+		Customer[] custArray = new Customer[2];
+		custArray[0] = client1;
+		custArray[1] = client2;
+
+		for (int i = 0; i < custArray.length; i++) {
+
+			String billingAdd = custArray[i].getBillingAddress().getCity();
+
+			if (billingAdd.equalsIgnoreCase("Chicago")) {
+				System.out.println(custArray[i].toString());
+			}
+			// else {
+//				System.out.println("No Match for Billing Address with city as Chicago found");
+//			}
+		}
+
+	}
+
+}

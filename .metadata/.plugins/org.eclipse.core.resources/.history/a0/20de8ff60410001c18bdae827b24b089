@@ -1,0 +1,40 @@
+package assignment2_5;
+
+/**
+ * Prog5.java asks the user to input a String. The output is the
+ * characters of this String in reverse order, which is written to the console.
+ * 
+ * @author RMK Aheto
+ * @version 30 August 2021
+ */
+import java.util.Scanner;
+
+public class Prog5 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Please Enter a String here");
+
+		String inputString = input.nextLine();
+
+		System.out.println(inputString);
+		input.close();
+
+		StringBuilder reversedString = new StringBuilder();
+
+		for (int i = inputString.length() - 1; i >= 0; i--) {
+
+			System.out.print(inputString.charAt(i)); //
+			reversedString.append(inputString.charAt(i));
+
+		}
+
+
+		// System.out.println(reversedString);
+
+	}
+
+}

@@ -1,0 +1,132 @@
+package assignment4_3.employeeinfo;
+
+public class AccountList {
+
+	// incremented or decremented as Strings are added or removed
+	// ArrayList<String> strArray = new ArrayList<String>(2);
+
+	private int size;
+
+	private int searchIndex;
+
+	Account[] newAccounts;
+
+	public AccountList() {
+
+		newAccounts = new Account[3];
+
+		this.size = 0;
+
+	}
+
+	public void add(Account s) {
+		// adds s to the end of the underlying array
+
+		if (size >= newAccounts.length)
+			resize();
+
+		newAccounts[size] = s;
+		size++; // size = size+1;
+
+	}
+
+	public Account get(int i) {
+		// retrieves the String at the ith position in the underlying array
+
+		return (newAccounts[i]);
+	}
+
+	public boolean remove(Account s) {
+		// removes first occurrence of String s if it is found in the underlying array
+		// if found, returns true; if not found returns false
+
+		if (find(s)) {
+			Account[] copy = new Account[newAccounts.length - 1];
+
+			for (int i = 0, j = 0; i < newAccounts.length; i++) {
+
+				if (i != searchIndex) {
+
+					copy[j++] = newAccounts[i];
+
+				}
+
+			}
+
+			newAccounts = copy;
+
+			this.size -= 1;
+			return true;
+
+		}
+
+		return false;
+	}
+
+	public boolean find(Account s) {
+		// returns true if String s is found in the array, false otherwise
+
+		for (int i = 0; i < newAccounts.length; i++) {
+			if (newAccounts[i].equals(s)) {
+
+				searchIndex = i;
+				return true;
+
+			}
+		}
+
+		return false;
+	}
+
+	public String toString() {
+		// returns a String representation of the underlying array
+		// here is a typical output:
+
+		StringBuilder result = new StringBuilder();
+
+		result.append("[");
+
+		for (int i = 0; i < size - 1; i++) {
+
+			if (newAccounts[i] != null) {
+				result.append(newAccounts[i] + ",");
+
+			}
+
+		}
+
+		result.append(newAccounts[size - 1] + "]");
+
+		return result.toString();
+
+	}
+
+	public int size() {
+		// - returns the next open position in the underlying array – this is precisely
+		// the
+		// number of Strings that have been added minus the number of String that have
+		// been removed.
+
+		return size;
+	}
+
+	private void resize() {
+
+		System.out.println("Resizing.....");
+		// Object[] originalArray = new Object[5];
+		Account[] largerstrArray = new Account[2 * newAccounts.length];
+		System.arraycopy(newAccounts, 0, largerstrArray, 0, newAccounts.length);
+		newAccounts = largerstrArray;
+	}
+
+	/*
+	 * In this class, the resize() method must be called whenever addition of
+	 * another String to the underlying array goes beyond the current length of the
+	 * array. The resize method should use System.arraycopy to create a new String
+	 * array having twice the size of the current String array, and should copy the
+	 * old array into the first part of the new array
+	 */
+
+	// removed main block for Excercise 4-3
+
+}

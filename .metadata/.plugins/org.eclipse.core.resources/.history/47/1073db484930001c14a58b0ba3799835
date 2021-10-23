@@ -1,0 +1,33 @@
+package exception_handling;
+
+public class Book {
+
+	private String name;
+	private int iSBN;
+
+	public Book(String name, int iSBN) {
+		super();
+		setName(name);
+		setiSBN(iSBN);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) throws InvalidNameException {
+
+		if (name.length() < 8)
+			throw new InvalidNameException("Wrong name");
+	}
+
+	public int getiSBN() {
+		return iSBN;
+	}
+
+	public void setiSBN(int iSBN) {
+		this.iSBN = iSBN;
+	}
+
+
+}

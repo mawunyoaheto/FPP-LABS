@@ -1,0 +1,168 @@
+package assignment3_3;
+
+
+public class MyStringList {
+
+	private String[] strArray = new String[2];
+
+	private int size = 0;
+
+	private int searchIndex;
+
+	public static void main(String[] args) {
+
+		MyStringList l = new MyStringList();
+		l.add("Bob");
+		System.out.println("The list of size " + l.size() + " is " + l);
+		l.add("Steve");
+		System.out.println("The list of size " + l.size() + " is " + l);
+		l.add("Susan");
+		System.out.println("The list of size " + l.size() + " is " + l);
+		l.add("Mark");
+		System.out.println("The list of size " + l.size() + " is " + l);
+		l.add("Dave");
+		System.out.println("The list of size " + l.size() + " is " + l);
+		l.remove("Mark");
+		System.out.println("The list of size " + l.size() + " is " + l);
+		l.remove("Bob");
+		System.out.println("The list of size " + l.size() + " is " + l);
+	}
+
+	// adds s to the end of the underlying array
+	public void add(String s) {
+
+		/*
+		 * check if array has room to add s compare size to array length and if size is
+		 * greater or equal to array length then resize array to make room for s to be
+		 * added
+		 */
+		if (size == strArray.length)
+			resize();
+
+		// add s to the next position available in array
+		strArray[size++] = s;
+
+	}
+
+	// retrieves the String at the ith position in the underlying array
+	public String get(int i) {
+
+		if (i < 0 || i >= size) {
+			return null;
+		}
+		return strArray[i];
+	}
+
+	// returns true if String s is found in the array, false otherwise
+	public boolean find(String s) {
+		int i = 0;
+		for (String list : strArray) {
+			i++;
+			if (list.equals(s))
+
+				searchIndex = i;
+			return true;
+		}
+
+		return false;
+	}
+
+	/*
+	 * removes first occurrence of String s if it is found in the underlying array
+	 * if found, returns true; if not found returns false
+	 */
+	public boolean remove(String s) {
+
+		// return (find(s)) ? true : false;
+
+		if (find(s)) {
+
+			String[] tempArr = new String[strArray.length - 1];
+
+			for (int i = 0, j = 0; i < strArray.length; i++) {
+				if (i != searchIndex) {
+					tempArr[j++] = strArray[i];
+				}
+			}
+
+			strArray = tempArr;
+			--size;
+			return true;
+		}
+
+		return false;
+
+//		int index = -1;
+//
+//		for (int i = 0; i < size; ++i) {
+//			if (strArray[i].equals(s)) {
+//				index = i;
+//				break;
+//			}
+//		}
+//		if (index == -1)
+//			return false;
+//		String[] tempArray = new String[strArray.length];
+//		System.arraycopy(strArray, 0, tempArray, 0, index);
+//		System.arraycopy(strArray, index + 1, tempArray, index, strArray.length - (index + 1));
+//		strArray = tempArray;
+//		--size;
+//		return true;
+	}
+
+	/*
+	 * returns a String representation of the underlying array here is a typical
+	 * output: [Bob, Steve, Susan, Mark, Dave]
+	 */
+
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder("[");
+
+		for (int i = 0; i < size - 1; ++i) {
+
+			sb.append(strArray[i] + ", ");
+		}
+
+		sb.append(strArray[size - 1] + "]");
+		return sb.toString();
+	}
+
+	/*
+	 * returns the next open position in the underlying array – this is precisely
+	 * the number of Strings that have been added minus the number of String that
+	 * have been removed.
+	 */
+
+	public int size() {
+
+		return size;
+	}
+
+	/*
+	 * returns the next open position in the underlying array – this is precisely
+	 * the number of Strings that have been added minus the number of String that
+	 * have been removed
+	 */
+	private void resize() {
+
+		System.out.println("Resizing...");
+		// get strArray size
+		int prevArraySize = strArray.length;
+
+		// double the size of strArray to be used in the recreation of the array
+		int newArraySize = 2 * prevArraySize;
+
+		String[] tempArray = new String[newArraySize];
+
+		// copy elements from strArray array to the temporary array
+		System.arraycopy(strArray, 0, tempArray, 0, prevArraySize);
+
+		// copy tempArray elements back to strArray after doubling size
+		strArray = tempArray;
+
+		//
+
+	}
+
+}

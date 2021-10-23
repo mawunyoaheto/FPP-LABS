@@ -1,0 +1,37 @@
+package cloning_1.deep;
+
+public class MyClass implements Cloneable {
+
+	CallingClass c = new CallingClass();
+	String name;
+
+	public MyClass() {
+		name = "Raymond";
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+
+		MyClass m = (MyClass) super.clone();
+
+		m.c = new CallingClass();
+		m.c.myName = c.myName;
+
+		return m;
+
+	}
+
+	@Override
+	public String toString() {
+
+		return "name: " + getName();
+	}
+
+}

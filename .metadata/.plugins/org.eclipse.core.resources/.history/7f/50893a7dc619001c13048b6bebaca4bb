@@ -1,0 +1,38 @@
+package adt;
+
+public class StringDoublyLinkedList {
+	
+	Node header;
+	Node next;
+	Node previous;
+	
+	void addFirst(String data) {
+		
+		
+		Node newNode = new Node(data);
+		if(header==null || data==null) return;
+		
+		
+		
+	}
+
+	class Node {
+
+		String data;
+		Node next;
+		Node previous;
+
+		public Node(String data) {
+			super();
+			this.data = data;
+		}
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+

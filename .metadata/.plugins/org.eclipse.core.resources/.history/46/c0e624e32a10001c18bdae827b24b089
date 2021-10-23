@@ -1,0 +1,30 @@
+package assignment5_3;
+
+import java.util.Arrays;
+import java.util.Comparator;
+
+public class MainLambda {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//StringSort ss = new StringSort(new StringLengthComparator(false));
+		
+		String[] testStrings = { "andy", "mike", "joe", "allen", "stephan" };
+
+		boolean ascending = false;
+
+		
+		StringSort ss = new StringSort(new Comparator<String>() {
+			(o1,o2) -> ascending ? (o1.length() - o2.length()) : (o2.length() - o1.length());
+			}
+		});
+
+	// Arrays.sort(testStrings,(o1,o2) -> ascending ? (o1.length() - o2.length()) :
+	// (o2.length() - o1.length()));
+
+	// (testStrings,(o1,o2) -> ascending ? (o1.length() - o2.length()) :
+	// (o2.length() - o1.length()));
+	}
+
+}

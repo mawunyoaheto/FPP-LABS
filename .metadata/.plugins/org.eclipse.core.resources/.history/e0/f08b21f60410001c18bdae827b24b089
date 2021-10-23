@@ -1,0 +1,32 @@
+package assignment4_3.employeeinfo;
+
+public class RetirementAccount extends Account {
+
+	private static final double penalty = 2 / 100;
+
+	RetirementAccount(Employee emp, double amount) {
+		super(emp, amount);
+		// TODO Auto-generated constructor stub
+	}
+
+	public AccountType getAcctType() {
+		return AccountType.RETIREMENT;
+	}
+
+
+	@Override
+	public boolean makeWithdrawal(double amount) {
+
+		double balance = super.getBalance();
+
+		// calculate 2 percent of balance as penalty double penalty =
+		balance += (balance * penalty);
+
+		if (amount <= balance) {
+			balance -= amount + penalty;
+			return true;
+		}
+		return false;
+	}
+
+}

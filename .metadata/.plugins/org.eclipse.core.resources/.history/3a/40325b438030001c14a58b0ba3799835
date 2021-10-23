@@ -1,0 +1,13 @@
+package data_structures.mystringsinglylinklist;
+
+public class Node {
+	private String data;
+	private Node next;
+	public Node(String data) {
+		super();
+		this.data = data;
+	}
+	
+	
+
+}

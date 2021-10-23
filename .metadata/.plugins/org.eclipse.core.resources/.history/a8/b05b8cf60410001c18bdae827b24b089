@@ -1,0 +1,64 @@
+package assignment2_6;
+
+import java.util.Arrays;
+
+/**
+ * Prog6.java accepts an array of Strings as its only argument. When the method
+ * is called, it creates a new array in which all duplicate Strings in the
+ * original input array have been removed.
+ * 
+ * @author RMK Aheto
+ * @version 30 August 2021
+ */
+public class Prog6 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[] input = { "horse", "dog", "cat", "horse", "dog" };
+
+		System.out.println(Arrays.toString(removeDuplicates(input)));
+
+	}
+
+	static String[] removeDuplicates(String[] arr) {
+
+		String[] tempArray = new String[arr.length];
+
+		boolean found = false;
+
+		int count = 0;
+
+		int k, i;
+
+		for (i = 0; i < arr.length; i++) {
+
+			for (k = 0; k < arr.length; k++) {
+
+				if (arr[i].equals(tempArray[k])) {
+
+					found = true;
+				}
+
+			}
+
+			if (found) {
+
+			} else {
+				tempArray[count] = arr[i];
+				count++;
+			}
+
+		}
+
+		String[] finalArray = new String[count];
+
+		for (int m = 0; m < count; m++) {
+
+			finalArray[m] = tempArray[m];
+		}
+
+		return finalArray;
+	}
+
+}

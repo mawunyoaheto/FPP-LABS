@@ -1,0 +1,27 @@
+package recurssion;
+
+public class RemoveCharacter {
+	static int count = 0;
+	public static void main(String[] args) {
+		String myString = "There are three bees on the pine tree!";
+
+		System.out.println(remove_e(myString));
+
+	}
+
+	public static String remove_e(String s) {
+
+		final int length = s.length() - 1;
+
+
+		if (s == null || count > length)
+			return s;
+
+		if (s.charAt(count) == 'e')
+			s = s.substring(count);
+		count++;
+		return remove_e(s);
+
+	}
+
+}

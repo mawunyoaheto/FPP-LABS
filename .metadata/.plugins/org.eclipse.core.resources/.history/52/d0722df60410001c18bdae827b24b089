@@ -1,0 +1,44 @@
+package assignment4_1;
+
+/**
+ * 
+ * @author mawun
+ *
+ */
+public class Secretary extends DeptEmployee {
+
+	private double overtimeHours;
+
+	/**
+	 * 
+	 * @param name
+	 * @param salary
+	 * @param year
+	 * @param month
+	 * @param day
+	 */
+	public Secretary(String name, double salary, int year, int month, int day) {
+		super(name, salary, year, month, day);
+
+	}
+
+	// gets overtime hours
+	public double getOvertimeHours() {
+		return overtimeHours;
+	}
+
+	// sets overtime hours
+	public void setOvertimeHours(double overtimeHours) {
+		this.overtimeHours = overtimeHours;
+	}
+
+	// computes salary
+	@Override
+	public double computeSalary() {
+
+		double baseSalary = super.computeSalary();
+
+		return baseSalary + (12 * overtimeHours);
+	}
+
+}

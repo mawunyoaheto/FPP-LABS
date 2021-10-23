@@ -1,0 +1,26 @@
+package assignment4_5.good;
+
+public class Rectangle extends ClosedCurve implements Polygon {
+
+	private double width;
+	private double length;
+
+	public Rectangle(double aWidth, double aLength) {
+		super();
+		this.width = aWidth;
+		this.length = aLength;
+	}
+
+	@Override
+	public double computeArea() {
+
+		return width * length;
+	}
+
+	@Override
+	public double[] getArrayOfSides() {
+		double[] nOfSides = { width, length };
+		return nOfSides;
+	}
+
+}

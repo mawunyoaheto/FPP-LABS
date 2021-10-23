@@ -1,0 +1,6 @@
+INDEX VERSION 1.4+D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2723666882.index
+3489973881.index
+1372704445.index
+1583249279.index
+105355422.index

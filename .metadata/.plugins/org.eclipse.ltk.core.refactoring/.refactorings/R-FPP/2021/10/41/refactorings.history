@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MyStringList.java&apos; to &apos;SelfPractice/src/polymorphism.Assignment4_3.employeeinfo&apos;&#x0D;&#x0A;- Original project: &apos;R-FPP&apos;&#x0D;&#x0A;- Destination element: &apos;SelfPractice/src/polymorphism.Assignment4_3.employeeinfo&apos;&#x0D;&#x0A;- Original element: &apos;Lab2.Assignment3_3.MyStringList.java&apos;" description="Copy compilation unit" destination="=SelfPractice/src&lt;polymorphism.Assignment4_3.employeeinfo" element1="/src&lt;Lab2.Assignment3_3{MyStringList.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1633283044142" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,29 @@
+package polymorphism_1;
+
+public class Fusion extends Ford implements HybridFords{
+	
+	public Fusion() {
+		super(4,6 ,7);
+	}
+
+	@Override
+	public int CalculateSpeed() {
+
+		return getTireSize() * 9;
+	}
+
+	@Override
+	public boolean equals(Object aFusion) {
+		if(aFusion==null)
+			return false;
+		if(!(aFusion instanceof Fusion))
+			return false;
+		
+		Fusion fusion = (Fusion)aFusion;
+		
+		boolean isEqual = fusion.getModelName().equals(getModelName());
+
+		return isEqual;
+		
+	}
+}

@@ -1,0 +1,29 @@
+package assignment4_1;
+
+public class Professor extends DeptEmployee {
+
+	private int numberOfPublications;
+
+	/**
+	 * 
+	 * @param name
+	 * @param salary
+	 * @param year
+	 * @param month
+	 * @param day
+	 */
+	public Professor(String name, double salary, int year, int month, int day) {
+		super(name, salary, year, month, day);
+		// TODO Auto-generated constructor stub
+	}
+
+	public int getNumberOfPublications() {
+		return numberOfPublications;
+	}
+
+	public void setNumberOfPublications(int numberOfPublications) {
+		this.numberOfPublications = numberOfPublications;
+	}
+
+
+}

@@ -1,0 +1,31 @@
+package exception_handling;
+
+public class Book {
+
+	private String name;
+	private int iSBN;
+
+	public Book(String name, int iSBN) {
+		super();
+		setName(name);
+		setiSBN(iSBN);
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getiSBN() {
+		return iSBN;
+	}
+
+	public void setiSBN(int iSBN) {
+		this.iSBN = iSBN;
+	}
+
+
+}

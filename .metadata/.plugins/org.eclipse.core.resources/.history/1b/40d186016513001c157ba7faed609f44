@@ -1,0 +1,213 @@
+package Assignment6_1;
+
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+public class MyFrame extends JFrame {
+
+	// text fields
+	JTextField nameText;
+	JTextField streetText;
+	JTextField cityText;
+	JTextField stateText;
+	JTextField zipText;
+
+	// labels
+	JLabel nameLabel;
+	JLabel streetLabel;
+	JLabel cityLabel;
+	JLabel stateLabel;
+	JLabel zipLabel;
+
+	// button
+	JButton submitButton;
+
+	// JPanels
+	private JPanel textPanel;
+	private JPanel textPanelMiddle;
+	// private JPanel buttonPanel;
+	private JPanel buttonPanel;
+
+	public MyFrame() {
+
+		// put initializations like setSize, setTitle, centerFrame here
+		initializeWindow();
+		JPanel mainPanel = new JPanel();
+
+		defineTextFieldPanel();
+		defineButtonPanel();
+
+		mainPanel.setLayout(new BorderLayout());
+		mainPanel.add(textPanel, BorderLayout.NORTH);
+		mainPanel.add(textPanelMiddle, BorderLayout.CENTER);
+		mainPanel.add(buttonPanel, BorderLayout.SOUTH);
+
+		getContentPane().add(mainPanel);
+	}
+
+	private void initializeWindow() {
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setTitle("Address Book");
+		this.setSize(500, 160);
+		centerFrameOnDesktop(this);
+		this.setResizable(false);
+		this.setVisible(true);
+
+	}
+
+	public static void centerFrameOnDesktop(Component f) {
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		int height = toolkit.getScreenSize().height;
+		int width = toolkit.getScreenSize().width;
+		int frameHeight = f.getSize().height;
+		int frameWidth = f.getSize().width;
+		f.setLocation(((width - frameWidth) / 2), (height - frameHeight) / 3);
+	}
+
+	// define panel to hold textfields here
+	private void defineTextFieldPanel() {
+
+		GridLayout topPanelGridLayout = new GridLayout(2, 3, 5, 0);
+		GridLayout midPanelGridLayout = new GridLayout(2, 2, 5, 0);
+		// create components
+		nameText = new JTextField(15);
+		streetText = new JTextField(15);
+		cityText = new JTextField(15);
+		stateText = new JTextField(15);
+		zipText = new JTextField(15);
+
+		// create labels
+		nameLabel = new JLabel("Name");
+		streetLabel = new JLabel("Street");
+		cityLabel = new JLabel("City");
+		stateLabel = new JLabel("State");
+		zipLabel = new JLabel("Zip");
+
+		textPanel = new JPanel();
+		// textPanel.setLayout(topPanelGridLayout);
+		textPanel.setLayout(new GridBagLayout());
+		GridBagConstraints c = new GridBagConstraints();
+
+//		
+//		int top = 20;
+//	    int left = 20;
+//	    int bottom = 2;
+//	    int right = 40;
+//	    c.insets = new Insets(top, left, bottom, right);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 0;
+		textPanel.add(nameLabel, c);
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.gridy = 0;
+		textPanel.add(streetLabel, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 2;
+		c.gridy = 0;
+		textPanel.add(cityLabel, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 1;
+		textPanel.add(nameText, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.gridy = 1;
+		textPanel.add(streetText, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 2;
+		c.gridy = 1;
+		textPanel.add(cityText, c);
+
+		textPanelMiddle = new JPanel();
+		//textPanelMiddle.setLayout(new FlowLayout(FlowLayout.CENTER));
+		// textPanelMiddle.setLayout(midPanelGridLayout);
+		
+		textPanelMiddle.setLayout(new GridBagLayout());
+		// GridBagConstraints c = new GridBagConstraints();
+//		if (shouldFill) {
+//		                //natural height, maximum width
+//		                c.fill = GridBagConstraints.HORIZONTAL;
+//		}
+
+		c.gridx = 0;
+		c.gridy = 0;
+		c.ipady = 5;
+		textPanelMiddle.add(stateLabel, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.gridy = 0;
+		textPanelMiddle.add(zipLabel, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 0;
+		c.gridy = 1;
+		textPanelMiddle.add(stateText, c);
+
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.gridy = 1;
+		textPanelMiddle.add(zipText, c);
+
+	}
+
+
+	private void defineButtonPanel() {
+
+		// create button
+		submitButton = new JButton("Submit");
+
+		buttonPanel = new JPanel();
+		buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER));
+
+		SubmitListener sButton = new SubmitListener();
+		submitButton.addActionListener(sButton);
+		buttonPanel.add(submitButton);
+
+	}
+
+	// implement action listener for submit button
+	class SubmitListener implements ActionListener {
+
+		public void actionPerformed(ActionEvent evt) {
+
+			String name = nameText.getText();
+			String street = streetText.getText();
+			String city = cityText.getText();
+			String state = stateText.getText();
+			String zip = zipText.getText();
+
+			if (name=="" && street == "" && city == "" && state == "" && zip == "") {
+
+			} else if(name.equals(null) && street.equals(null) && city.equals(null) && state.equals(null)
+					&& zip.equals(null)) {
+			
+			}else {
+
+			String inputString = name + "\n" + street + "\n" + city + ", " + state + " " + zip;
+
+			System.out.println(inputString);
+		}
+
+	}
+}
+}

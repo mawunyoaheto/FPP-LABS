@@ -1,0 +1,49 @@
+
+public class RecursiveSearch {
+	private String[] arr;
+	private int len;
+
+
+	public RecursiveSearch(String[] array) {
+		super();
+		this.arr = array;
+		len = arr.length - 1;
+
+	}
+
+
+	public boolean search(String s) {
+
+		if (s == null || arr == null)
+			return false;
+
+		return recurSearch(s, len);
+	}
+
+	private boolean recurSearch(String str, int upperBound) {
+
+		if (upperBound < 0)
+			return false;
+
+		if (str.equalsIgnoreCase(this.arr[upperBound])) {
+			return true;
+		}
+		else {
+		return recurSearch(str, --upperBound);
+	}
+}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String[] arr = { "Raymond", "Alex", "Alice", "Michael", "Dagi" };
+
+		RecursiveSearch r = new RecursiveSearch(arr);
+
+		RecursiveSearch m = r;
+
+		System.out.println(r.search("dagi"));
+		System.out.println(m.search("mawu"));
+	}
+
+}

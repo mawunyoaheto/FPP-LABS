@@ -1,0 +1,79 @@
+package assignment4_1;
+
+import java.util.Scanner;
+
+/**
+ * 
+ * @author RMK Aheto
+ *
+ */
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		double totalSalary = 0;
+		DeptEmployee[] deptEmployees = new DeptEmployee[5];
+
+		Secretary[] someSecretary = new Secretary[3];
+		someSecretary[0] = new Secretary("Julie Miles", 5000, 2010, 11, 01);
+		someSecretary[1] = new Secretary("Michael Meyer", 4500, 2012, 03, 01);
+		someSecretary[2] = new Secretary("Alice Aheto", 5200, 2010, 03, 01);
+
+		// set overtime hours for secretaries
+		someSecretary[0].setOvertimeHours(200);
+		someSecretary[1].setOvertimeHours(200);
+		someSecretary[2].setOvertimeHours(200);
+
+		Professor[] prof = new Professor[2];
+		prof[0] = new Professor("Peter Adele", 10000, 2019, 01, 01);
+		prof[1] = new Professor("Johny Nash", 14000, 2015, 01, 01);
+
+		// set number of publications for professors
+		prof[0].setNumberOfPublications(10);
+		prof[1].setNumberOfPublications(10);
+
+		deptEmployees[0] = someSecretary[0];
+		deptEmployees[1] = someSecretary[1];
+		deptEmployees[2] = someSecretary[2];
+		deptEmployees[3] = prof[0];
+		deptEmployees[4] = prof[1];
+
+		// read input from user
+		Scanner readInput = new Scanner(System.in);
+		System.out.println(
+				"Do you wish to see the sum of all salaries in the department? \nEnter Y to view and N to abort");
+		String userChoice = readInput.nextLine();
+		readInput.close();
+
+		switch (userChoice.toUpperCase()) {
+
+		case "Y": {
+
+
+			for (DeptEmployee d : deptEmployees) {
+
+				totalSalary += d.computeSalary();
+
+				System.out.println(d.getName() + " " + d.computeSalary());
+
+			}
+
+			System.out.println("Total salary: " + totalSalary);
+
+			break;
+		}
+
+		case "N": {
+
+			System.out.println("Good Bye!!!\n Exiting Application..");
+
+			break;
+		}
+		default:
+			throw new IllegalArgumentException("Unexpected value: " + userChoice);
+		}
+
+	}
+
+}

@@ -1,0 +1,18 @@
+package data_structures.stackandquewithdoublylinklist;
+
+public class StringDoublyLinkList {
+	private Node header;
+	private Node tail;
+	private int size;
+	
+	
+	public StringDoublyLinkList() {
+		
+		header = new Node();
+		tail = new Node();
+		header.next=tail;
+		tail.previous=header;
+		size=0;
+	}
+
+}

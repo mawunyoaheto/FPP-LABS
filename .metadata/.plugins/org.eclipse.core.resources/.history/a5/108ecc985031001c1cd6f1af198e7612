@@ -1,0 +1,9 @@
+package data_structures.stackandquewithsinglylinkedlist;
+
+public class NullInputExceptionn extends Exception{
+	
+	public NullInputExceptionn(String msg) {
+		super(msg);
+	}
+
+}

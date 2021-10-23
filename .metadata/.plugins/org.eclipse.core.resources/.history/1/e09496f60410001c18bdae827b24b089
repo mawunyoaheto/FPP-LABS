@@ -1,0 +1,78 @@
+package assignment2_1;
+
+/**
+ * Customer.java stores data for a Customer.
+ * 
+ * @author RMK Aheto
+ * @version 30 August 2021
+ */
+public class Customer {
+
+	private String firstName;
+	private String lastName;
+	private String socSecurityNumber;
+	private Address billingAddress;
+	private Address shippingAddress;
+
+	public Customer(String fName, String lName, String sSNo) {
+		firstName = fName;
+		lastName = lName;
+		socSecurityNumber = sSNo;
+
+	}
+
+	public Customer(String firstName, String lastName, String socSecurityNumber, Address billingAddress,
+			Address shippingAddress) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.socSecurityNumber = socSecurityNumber;
+		this.billingAddress = billingAddress;
+		this.shippingAddress = shippingAddress;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getSocSecurityNumber() {
+		return socSecurityNumber;
+	}
+
+	public void setSocSecurityNumber(String socSecurityNumber) {
+		this.socSecurityNumber = socSecurityNumber;
+	}
+
+	public Address getBillingAddress() {
+		return billingAddress;
+	}
+
+	public void setBillingAddress(Address billing) {
+		this.billingAddress = billing;
+	}
+
+	public Address getShippingAddress() {
+		return shippingAddress;
+	}
+
+	public void setShippingAddress(Address work) {
+		this.shippingAddress = work;
+	}
+
+	public String toString() {
+
+		return "[" + firstName + " " + lastName + " " + socSecurityNumber + "]";
+	}
+}

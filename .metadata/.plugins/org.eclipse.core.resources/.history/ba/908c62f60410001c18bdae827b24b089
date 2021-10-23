@@ -1,0 +1,43 @@
+package assignment3_4;
+
+/**
+ * Rectangle.java is an immutable class with a method to calculate area of a
+ * rectangle.
+ * 
+ * @author RMK Aheto
+ * @version 01 September 2021
+ */
+public final class Rectangle {
+
+	private final double width;
+	private final double length;
+
+	public static double area;
+
+	public Rectangle(double width, double length) {
+		super();
+		this.width = width;
+		this.length = length;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public double getLength() {
+		return length;
+	}
+
+	// returns the area of the rectangle
+	public double computeArea() {
+
+		return length * width;
+
+	}
+
+	public String toString() {
+
+		return "Area of a Triangle is: " + computeArea();
+	}
+
+}

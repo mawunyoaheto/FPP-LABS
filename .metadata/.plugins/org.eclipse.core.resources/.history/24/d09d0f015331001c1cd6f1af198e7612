@@ -1,0 +1,79 @@
+package data_structures.stackandquewithsinglylinkedlist;
+
+public class SinglyLinkedList {
+	private Node head;
+	private int size;
+
+	public void addFirst(String data) throws NullInputException {
+
+		if (data == null)
+			throw new NullInputException("Null input not allowed");
+
+		Node n = new Node(data);
+
+		n.next = head;
+		head = n;
+		size++;
+	}
+
+	public void addLast(String data) throws NullInputException {
+
+		if (data == null)
+			throw new NullInputException("Null input not allowed");
+
+		if (head == null) {
+			addFirst(data);
+			return;
+		} else {
+
+			Node n = new Node(data);
+			Node temp = head;
+
+			while (temp.next != null) {
+				temp = temp.next;
+			}
+
+			temp.next = n;
+			size++;
+		}
+	}
+
+	public boolean remove(String data) throws NullInputException {
+
+		if (data == null)
+			throw new NullInputException("Null input not allowed");
+
+		if (size == 0)
+			return false;
+
+		if (head.data.equals(data)) {
+
+			head = head.next;
+			size--;
+			return true;
+		}
+
+		Node temp = head;
+
+		while (temp.next != null) {
+
+			if (temp.data.equals(data)) {
+
+				temp = temp.next;
+				size--;
+				return true;
+			}
+
+			temp = temp.next;
+		}
+
+		return false;
+
+	}
+
+
+public boolean remove(int pos) {
+	
+	
+}
+}

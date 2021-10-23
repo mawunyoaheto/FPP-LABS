@@ -1,0 +1,70 @@
+package data_structures.mystringsinglylinklist;
+
+public class StringSinglyLinkedList {
+	private Node startNode;
+	private int size;
+
+	public StringSinglyLinkedList() {
+		super();
+		startNode = new Node();
+		startNode.next = null;
+		size = 0;
+	}
+
+	public void addFirst(String input) throws NullInputException {
+
+		if (input == null)
+			throw new NullInputException("Null input not allowed. please enter a string");
+
+		if (input.isEmpty())
+			throw new NullInputException("Empty String not allowed. Please enter a valid string");
+		Node n = new Node(input);
+		if (startNode == null)
+			startNode = n;
+		else {
+			n.next = startNode;
+			startNode = n;
+		}
+		size++;
+	}
+
+	public void addLast(String input) throws NullInputException {
+		if (input == null)
+			throw new NullInputException("Null input not allowed. please enter a string");
+
+		if (input.isEmpty())
+			throw new NullInputException("Empty String not allowed. Please enter a valid string");
+		
+		Node n = new Node(input);
+		if (startNode == null)
+			startNode = n;
+		else {
+			Node temp = startNode.next;
+
+			while (temp.next.next != null) {
+				temp = temp.next;
+			}
+			temp.next = n;
+		}
+
+		size++;
+	}
+
+	@Override
+	public String toString() {
+
+		if (size == 0 || startNode == null)
+			return null;
+
+		String output = "";
+
+		while (startNode.next != null) {
+
+			output += startNode.data + "\n";
+
+			startNode = startNode.next;
+		}
+		return output;
+	}
+
+}

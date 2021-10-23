@@ -1,0 +1,35 @@
+package assignment2_4;
+
+/**
+ * Prog4.java that will reads a text file and extract all the product id’s that
+ * occur in the file.
+ * 
+ * @author RMK Aheto
+ * @version 30 August 2021
+ */
+
+public class Prog4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String data = Data.records;
+
+		String[] finalData = data.split(":");
+
+
+		String newString = "";
+		// String[] newString = new String[finalData.length];
+		for (int i = 0; i < finalData.length; i++) {
+
+			newString = finalData[i].toString();
+			String[] finalData1 = newString.split(",");
+			
+			System.out.println(finalData1[0]);
+			// finalData1[i] = newString.split(",");
+
+			// System.out.println(finalData[i].substring(0, 4));
+			}
+		}
+
+}

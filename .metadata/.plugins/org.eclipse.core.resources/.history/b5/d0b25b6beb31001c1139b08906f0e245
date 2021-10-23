@@ -1,0 +1,9 @@
+package Assignment12_2.employeeinfo;
+
+public class OverdrawnAccountException extends Exception {
+
+
+	OverdrawnAccountException(String s) {
+		super(s);
+	}
+}

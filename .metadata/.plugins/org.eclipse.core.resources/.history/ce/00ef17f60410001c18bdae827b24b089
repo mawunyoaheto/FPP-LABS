@@ -1,0 +1,25 @@
+package assignment4_5.good;
+
+import assignment4_4.good.Polygon;
+import assignment4_4.good.Rectangle;
+import assignment4_4.good.Square;
+import assignment4_4.good.Triangle;
+
+public class Test3 {
+
+	public static void main(String[] args) {
+
+		Polygon[] objects = { new Square(3), new Triangle(4, 5, 6), new Rectangle(3, 4) };
+
+		// compute areas
+		for (Polygon cc : objects) {
+			String output = String.format("For this %1$s \n  Perimeter= %2$s", cc.getClass().getSimpleName(),
+					cc.computePerimeter());
+
+			System.out.println(output);
+
+		}
+
+	}
+
+}

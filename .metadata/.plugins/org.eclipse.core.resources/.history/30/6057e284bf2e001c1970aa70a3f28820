@@ -1,0 +1,86 @@
+package data_structures.doublylinkedlist;
+
+public class ProductDoublyLinkedList {
+	private Node head;
+	private Node tail;
+	private int size;
+
+	public ProductDoublyLinkedList() {
+		this.head = null;
+		this.tail = null;
+		this.head.next = tail;
+		this.size = 0;
+	}
+
+	public void addFirst(Product input) {
+
+		Node n = new Node(input);
+		if (input == null)
+			return;
+		n.next = head.next;
+		n.next.previous.next = n;
+		n.next.previous = n;
+		n.previous = head;
+		size++;
+
+	}
+
+	public void addLast(Product input) {
+		if (input == null)
+			return;
+
+		Node n = new Node(input);
+		Node temp = head.next;
+		if (temp == tail)
+			addFirst(input);
+		else {
+
+			n.next = tail;
+			n.next.previous.next = n;
+			n.previous = n.next.previous;
+			n.next.previous = n;
+		}
+
+		size++;
+		}
+
+		public boolean remove() {
+			if (size == 0 || head.next == tail)
+				return false;
+
+			head.next = head.next.next;
+			head.next.previous = head;
+			size--;
+
+			return true;
+		}
+
+		public boolean search(Product input) {
+
+			Node temp = head.next;
+			if (size == 0 || temp == tail)
+				return false;
+
+			while (temp != null) {
+				if (temp.data.equals(input))
+					return true;
+				temp = temp.next;
+			}
+			return false;
+		}
+
+		
+		public void insert(Product input, int pos) {
+			
+			if(pos>size||pos<0||input==null)
+				return;
+			
+			Node temp = head.next;
+			int i =0;
+			while(temp!=null) {
+				
+temp=temp.next;
+			}
+			size++;
+		}
+}

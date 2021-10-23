@@ -1,0 +1,28 @@
+package data_structures.mystringsinglylinklist;
+
+public class StringSinglyLinkedList {
+	private Node startNode;
+	private int size;
+
+	public StringSinglyLinkedList() {
+		super();
+		startNode = new Node();
+		startNode.next = null;
+	}
+
+	public void addFirst(String input) throws NullInputException {
+
+		if (input == null)
+			throw new NullInputException("Null input not allowed. please enter a string");
+
+		if (input.isEmpty())
+			throw new NullInputException("Empty String not allowed. Please enter a valid string");
+		Node n = new Node(input);
+		if (startNode == null)
+			startNode = n;
+		else {
+			n.next = startNode;
+			startNode = n;
+		}
+	}
+}

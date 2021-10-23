@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;QueueException.java&apos; to &apos;SelfPractice/src/adt&apos;&#x0D;&#x0A;- Original project: &apos;Lab9&apos;&#x0D;&#x0A;- Destination element: &apos;SelfPractice/src/adt&apos;&#x0D;&#x0A;- Original element: &apos;Assignment9_4.QueueException.java&apos;" description="Copy compilation unit" destination="=SelfPractice/src&lt;adt" element1="/src&lt;Assignment9_4{QueueException.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1632178446612" units="1" version="1.0"/>
+</session>

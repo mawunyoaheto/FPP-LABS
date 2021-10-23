@@ -1,0 +1,40 @@
+package data_structures.doublylinkedlist;
+
+public class ProductDoublyLinkedList {
+	private Node head;
+	private Node tail;
+	private int size;
+
+	public ProductDoublyLinkedList() {
+		this.head = null;
+		this.tail = null;
+		this.head.next = tail;
+		this.size = 0;
+	}
+
+	public void addFirst(Product input) {
+
+		Node n = new Node(input);
+		if (input == null)
+			return;
+		n.next = head.next;
+		n.next.previous.next = n;
+		n.next.previous = n;
+		n.previous = head;
+		size++;
+
+	}
+
+	public void addLast(Product input) {
+		if (input == null)
+			return;
+
+		Node n = new Node(input);
+		Node temp = head.next;
+		if (temp == tail)
+			addFirst(input);
+		else {
+
+		}
+	}
+}

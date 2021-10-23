@@ -1,0 +1,26 @@
+package assignment4_6.case1;
+
+import java.util.GregorianCalendar;
+
+public class PersonWithJob extends Person {
+	private double salary;
+	PersonWithJob(String name, GregorianCalendar dob, double salary) {
+		super(name, dob);
+		this.salary = salary;
+	}
+	public double getSalary() {
+		return salary;
+	}
+
+	@Override
+	public final boolean equals(Object withJob) {
+		if (withJob == null)
+			return false;
+		if (withJob.getClass() != this.getClass())
+			return false;
+		PersonWithJob p = (PersonWithJob) withJob;
+		return p.getName().equals(getName()) && getDateOfBirth().equals(p.getDateOfBirth());
+	}
+
+
+}

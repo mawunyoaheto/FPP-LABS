@@ -1,0 +1,63 @@
+package assignment3_4;
+
+
+/**
+ * Triangle.java is an immutable class with a method to calculate area of a
+ * triangle.
+ * 
+ * @author RMK Aheto
+ * @version 01 September 2021
+ */
+
+public final class Triangle {
+
+	private final double base;
+	private final double height;
+
+
+	public Triangle(double base, double height) {
+
+		this.base = base;
+		this.height = height;
+		
+		
+		double diagonal = Math.sqrt((Math.pow(base, 2)));
+
+		System.out.println(diagonal);
+	}
+
+	public Triangle(double sideA, double sideB, double sideC) {
+
+		double max = sideA;
+		if (sideB > max) {
+			max = sideB;
+		}
+		if (sideC > max) {
+			max = sideC;
+		}
+
+		double semiP = (sideA + sideB + sideC) / 2;
+
+		double area = Math.sqrt(semiP * (semiP - sideA) * (semiP - sideB) * (semiP - sideC));
+
+		this.base = max;
+		this.height = (2 * area) / max;
+
+	}
+
+
+
+	// returns the area of the triangle
+	public double computeArea() {
+
+		return ((0.5 * base) * height);
+
+
+	}
+
+	public String toString() {
+
+		return "Area of a Triangle is: " + computeArea();
+	}
+
+}

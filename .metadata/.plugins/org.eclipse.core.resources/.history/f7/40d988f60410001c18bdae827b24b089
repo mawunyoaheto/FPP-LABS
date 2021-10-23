@@ -1,0 +1,35 @@
+package assignment2_8;
+
+/**
+ * Prog8.java outputs the minimum of an array of ints
+ * 
+ * @author RMK Aheto
+ * @version 30 August 2021
+ */
+
+public class Prog2_8 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		int[] num = { 2, -21, 3, 45, 0, 12, 18, 6, 3, 1, 0, -22 };
+
+		System.out.println(minNumber(num));
+
+	}
+
+	static int minNumber(int[] numbers) {
+
+		int min = numbers[0];
+
+		for (int i = 1; i < numbers.length; i++) {
+
+			if (numbers[i] < min) {
+				min = numbers[i];
+			}
+		}
+
+		return min;
+	}
+
+}

@@ -1,0 +1,28 @@
+package assignment2_2;
+
+/**
+ * Prog2.java output to the console the result of doing the following two computations:
+ * 1. get a random number x in the range 1 .. 9 and compute πx.
+ * 2. get a random number y in the range 3 .. 14 and compute yπ.
+ * 
+ * @author RMK Aheto
+ * @version 30 August 2021
+ */
+
+import prog2_7_Hint.RandomNumbers;
+
+public class Prog2 {
+
+	public static void main(String[] args) {
+
+		// RandomNumbers randNumbers = new RandomNumbers();
+
+		int x = RandomNumbers.getRandomInt(1, 9);
+		int y = RandomNumbers.getRandomInt(3, 14);
+
+		System.out.println("" + Math.pow(Math.PI, x));
+		System.out.println("" + Math.pow(y, Math.PI));
+
+	}
+
+}

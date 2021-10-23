@@ -1,0 +1,29 @@
+package assignment4_3.employeeinfo;
+
+/**
+ * 
+ * @author RMK Aheto
+ *
+ *
+ */
+public class CheckingAccount extends Account {
+	private final double MONTHLY_SERVICE_CHARGE = 5.00;
+
+	CheckingAccount(Employee emp, double amount) {
+		super(emp, amount);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public double getBalance() {
+
+		double balance = super.getBalance();
+
+		return balance - MONTHLY_SERVICE_CHARGE;
+	}
+
+	public AccountType getAcctType() {
+		return AccountType.CHECKING;
+	}
+
+}

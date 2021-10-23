@@ -1,0 +1,30 @@
+package Assignment7_3;
+
+import java.util.LinkedList;
+
+/**
+ * Recursively merges two sorted linked lists
+ *
+ */
+public class Merge {
+
+	LinkedList<Integer> list3 = new LinkedList<>();
+
+
+	public static void main(String[] args) {
+		LinkedList<Integer> list1 = new LinkedList<>();
+		LinkedList<Integer> list2 = new LinkedList<>();
+		list1.add(2);
+		list1.add(5);
+		list1.add(8);
+		list1.add(11);
+		list2.add(1);
+		list2.add(3);
+		list2.add(6);
+		Merge m = new Merge();
+		LinkedList<Integer> list3 = m.merge(list1, list2);
+		if (list3 != null)
+			System.out.println(list3);
+
+	}
+}

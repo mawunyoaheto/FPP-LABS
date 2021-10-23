@@ -1,0 +1,71 @@
+package data_structures.linkedlistwithouthead;
+
+public class SinglyLinkedList {
+	private Node startNode;
+	public int size;
+	
+	
+	public SinglyLinkedList() {
+		super();
+		
+		startNode = null;
+		size=0;
+	}
+	
+	public void addFirst(String input) {
+		
+		Node n = new Node(input);
+		
+		if(startNode==null)
+			startNode=n;
+		else {
+			n.next = startNode;
+			startNode = n;
+		}
+
+		size++;
+
+	}
+
+	public void addLast(String input) {
+
+		if (startNode == null)
+			addFirst(input);
+		else {
+			Node n = new Node(input);
+			Node temp = startNode;
+
+			while (temp.next != null) {
+
+				temp = temp.next;
+			}
+			temp.next = n;
+			size++;
+		}
+
+
+
+	}
+
+	@Override
+	public String toString() {
+
+		String output = "";
+		Node temp = startNode;
+
+		int count = 0;
+		while (count < size) {
+
+			output += temp.data + "\n";
+
+			temp = temp.next;
+			count++;
+		}
+		return output;
+
+	}
+	
+	
+	
+
+}

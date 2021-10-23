@@ -1,0 +1,21 @@
+package cloning_1.shallow;
+
+public class MyClass implements Cloneable {
+
+	String name = "Raymond";
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	@Override
+	protected Object clone() throws CloneNotSupportedException {
+		return super.clone();
+
+	}
+
+}

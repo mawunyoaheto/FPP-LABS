@@ -1,0 +1,20 @@
+package assignment5_3;
+
+public class MainAnonymous {
+
+	public static void main(String[] args) {
+
+		String[] testStrings = { "andy", "mike", "joe", "allen", "stephan" };
+
+		StringSort ss = new StringSort(new StringLengthComparator(false) {
+
+			public int compare(String o1, String o2) {
+				return ascending ? (o1.length() - o2.length()) : (o2.length() - o1.length());
+
+			}
+
+		});
+
+		System.out.println(ss.stringSort(testStrings));
+	}
+}

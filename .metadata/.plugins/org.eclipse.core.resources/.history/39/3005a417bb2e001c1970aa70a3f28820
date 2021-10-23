@@ -1,0 +1,13 @@
+package data_structures.doublylinkedlist;
+
+public class Node {
+	public Product data;
+	public Node next;
+	public Node previous;
+	
+	
+	public Node(Product p) {
+		this.data=p;
+	}
+
+}

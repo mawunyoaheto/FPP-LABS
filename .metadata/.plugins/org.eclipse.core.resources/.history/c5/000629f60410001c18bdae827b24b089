@@ -1,0 +1,20 @@
+package assignment4_2.closedcurve.good;
+
+public class Rectangle extends ClosedCurve {
+
+	private double width;
+	private double length;
+
+	public Rectangle(double aWidth, double aLength) {
+		super();
+		this.width = aWidth;
+		this.length = aLength;
+	}
+
+	@Override
+	public double computeArea() {
+
+		return width * length;
+	}
+
+}

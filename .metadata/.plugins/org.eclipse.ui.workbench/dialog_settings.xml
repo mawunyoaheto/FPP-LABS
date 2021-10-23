@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="NewWizardAction">
+		<item key="NewWizardSelectionPage.STORE_SELECTED_ID" value="org.eclipse.fx.ide.jdt.ui.javafx"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.fx.ide"/>
+			<item value="org.eclipse.wb"/>
+			<item value="org.eclipse.wb/org.eclipse.wb.swing"/>
+		</list>
+	</section>
+	<section name="ImportExportAction">
+		<item key="ImportExportPage.STORE_SELECTED_IMPORT_WIZARD_ID" value="org.eclipse.ui.wizards.import.FileSystem"/>
+		<list key="ImportExportPage.STORE_EXPANDED_IMPORT_CATEGORIES">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.m2e"/>
+		</list>
+	</section>
+	<section name="FileSystemImportWizard">
+		<item key="WizardFileSystemResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
+		<item key="WizardFileSystemResourceImportPage1.STORE_CREATE_CONTAINER_STRUCTURE_ID" value="false"/>
+		<list key="WizardFileSystemResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\mawun\Downloads\Hashtables-Practice\src"/>
+			<item value="C:\Users\mawun\Downloads\Hashtables-Practice\src\HT"/>
+			<item value="C:\Users\mawun\Downloads\Hashtables-Practice"/>
+			<item value="C:\Users\mawun\Downloads\raymon\copy"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab8"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\StacksQueues"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Quiz4"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D -RETAKE\ASSSIGNMENTS\Lab4\prog5_3_startup"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D -RETAKE\ASSSIGNMENTS\Lab4\prog6-2_code"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab3\src\assignment3_2"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Quiz3"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab4\src\assignment4_7"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab4\src\assignment4_6"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab4\src\assignment4_5"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab4\src\assignment4_4"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab4\src\assignment4_3"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D\MyLabFolder\Lab4\src\assignment4_2\closedcurve"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D -RETAKE\RESOURCES\R-FPP - PolymorphismExample\src"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D -RETAKE\RESOURCES\R-FPP - PolymorphismExample\src\Polymorphism"/>
+			<item value="D:\MIU ACADEMIC\FPP CS390-2021-09A-09D -RETAKE\ASSSIGNMENTS\Lab2 - Files\prog3_3_startup"/>
+		</list>
+	</section>
+</section>

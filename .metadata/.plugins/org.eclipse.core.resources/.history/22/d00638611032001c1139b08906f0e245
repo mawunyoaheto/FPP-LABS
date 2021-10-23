@@ -1,0 +1,106 @@
+package recurssion;
+
+import java.util.Arrays;
+
+public class SearchNumber {
+
+	public SearchNumber() {
+		count = 0;
+	}
+
+	static int count = 0;
+	public static void main(String[] args) {
+
+		int[] ints = { 6, 3, 5, 4, 8, 2, 7, 1, 9 };
+		String[] myArr = { "Alice", "Jayden", "Jayda", "Rosemond" };
+//		System.out.println(search(ints, 10));
+//		System.out.println(search1(ints, 2));
+
+		//System.out.println(search("mango", 'e'));
+		// System.out.println(search(myArr, "Rosemond"));
+		// System.out.println(getFactorial(8));
+		System.out.println(pow(2.0000, 10));
+
+	}
+
+	static boolean search(int[] arr, int num) {
+
+
+		if (arr.length == 1)
+			return arr[0] == num;
+
+		int[] arr2 = Arrays.copyOf(arr, arr.length - 1);
+
+		return search(arr2, num) ? true : arr[arr.length - 1] == num;
+	}
+
+	static boolean search1(int[] arr, int num) {
+
+		if (count > arr.length - 1)
+			return false;
+		return (arr[count++] == num) ? true : search(arr, num);
+
+
+	}
+
+	static boolean search(String s, char c) {
+
+		if (s.length() == 1)
+			return s.charAt(0) == c;
+
+		String newString = s.substring(0, s.length() - 1);
+
+		return search(newString, c) ? true : s.charAt(s.length() - 1) == c;
+
+	}
+
+	static boolean search(String[] arr, String s) {
+
+		System.out.println("Method " + Arrays.toString(arr));
+
+		if (arr.length == 1) {
+			System.out.println("returned 1");
+			return arr[0].equals(s);
+		}
+		String[] arr2 = Arrays.copyOf(arr, arr.length - 1);
+
+		System.out.print("Returned " + Arrays.toString(arr2));
+		System.out.println(": " + Arrays.toString(arr));
+
+		return search(arr2, s) ? true : arr[arr.length - 1].equals(s);
+	}
+
+	static int getFactorial(int num) {
+
+		System.out.println("Method: " + num);
+
+		if (num == 1) {
+			System.out.println("returned 1");
+			return 1;
+		} else {
+
+			int result = num * getFactorial(num - 1);
+			System.out.print("Returned " + result);
+			System.out.println(" : " + num + " * " + "fact(" + num + "-1)");
+
+			return result;
+		}
+	}
+
+	static boolean powerOfThree(int n) {
+
+		return false;
+	}
+
+	static double pow(double x, int n) {
+
+		if (n == 0)
+			return 1;
+		else {
+
+			double result = x * pow(x, n - 1);
+
+			return result;
+		}
+	}
+}

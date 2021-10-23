@@ -1,0 +1,12 @@
+package data_structures.mystringsinglylinklist;
+
+public class StringSinglyLinkedList {
+	private Node startNode;
+	private int size;
+
+	public StringSinglyLinkedList() {
+		super();
+		startNode = new Node();
+	}
+
+}

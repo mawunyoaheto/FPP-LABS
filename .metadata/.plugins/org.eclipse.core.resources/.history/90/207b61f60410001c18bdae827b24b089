@@ -1,0 +1,31 @@
+package assignment3_4;
+
+/**
+ * Circle.java is an immutable class with a method to calculate area of a
+ * circle.
+ * 
+ * @author RMK Aheto
+ * @version 01 September 2021
+ */
+
+public final class Circle {
+
+	private double radius;
+
+	public Circle(double radius) {
+		super();
+		this.radius = radius;
+	}
+
+	public double computeArea() {
+
+		return Math.round((Math.PI * Math.pow(radius, 2)));
+
+	}
+
+	public String toString() {
+
+		return "Area of a Circle is: " + computeArea();
+	}
+
+}

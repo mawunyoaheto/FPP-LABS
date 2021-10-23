@@ -1,0 +1,49 @@
+package customer;
+
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
+
+import product.Product;
+
+public class ShoppingCart {
+	private int cartId;
+	private List<Product> products;
+	private int quantity;
+	private LocalDate dateAdded;
+	private Customer customer;
+
+	public ShoppingCart() {
+
+	}
+
+	public ShoppingCart(int cartId, int quantity, LocalDate dateAdded) {
+		super();
+		this.cartId = cartId;
+		this.quantity = quantity;
+		this.dateAdded = dateAdded;
+
+		products = new ArrayList<Product>();
+	}
+
+	public int getCartId() {
+		return cartId;
+	}
+
+	public List<Product> getProducts() {
+		return products;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public LocalDate getDateAdded() {
+		return dateAdded;
+	}
+
+	public Customer getCustomer() {
+		return customer;
+	}
+
+}

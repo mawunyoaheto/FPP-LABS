@@ -1,0 +1,43 @@
+package cloning_1.deep;
+
+import cloning_1.shallow.MyClass;
+
+public class CallingClass {
+	String myName;
+	
+	
+
+	public MyClass tryToClone(MyClass cl) {
+
+		try {
+			return (MyClass) cl.clone();
+		} catch (CloneNotSupportedException e) {
+			return null;
+		}
+	}
+
+	public static void main(String[] args) {
+		CallingClass cc = new CallingClass();
+		MyClass cl = new MyClass();
+
+		// clone created here
+		MyClass result = cc.tryToClone(cl);
+
+
+		System.out.println("original: " + result.getName());
+		System.out.println("clone: " + cl.getName() + "\n");
+
+		System.out.println("Change clone to Dagi");
+		result.setName("Dagi");
+
+		System.out.println("original: " + cl.getName());
+		System.out.println("clone: " + result.getName() + "\n");
+
+		System.out.println("Change originl to Ismael");
+		cl.setName("Ismael");
+		System.out.println("original: " + cl.getName());
+		System.out.println("clone: " + result.getName());
+
+	}
+
+}
